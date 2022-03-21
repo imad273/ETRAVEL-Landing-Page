@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input, textarea {
+  outline: none;
+}
+
+input[type=file]::file-selector-button {
+  border: 1px solid rgb(171, 177, 184);
+  padding: .2em .4em;
+  background-color: rgb(171, 177, 184);
+  color: #fff;
+  transition: 1s;
+  cursor: pointer;
+}
