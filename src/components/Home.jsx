@@ -29,7 +29,7 @@ function Home() {
     for (var i = 0; i < 3; i++) {
       blogs.push(response[i]);
     }
-    
+
     setData(blogs);
 
   }
@@ -211,7 +211,6 @@ function Home() {
               <div className='text-white absolute h-full w-full flex justify-center items-center z-20'>
                 <h3 className='text-2xl font-bold text-center md:w-4/12 w-9/12'>{Data.length === 0 ? "" : Data[0].Title}</h3>
               </div>
-              
               <img src={Data.length === 0 ? "" : Data[0].Picture} alt="blog1" className='object-cover h-full w-full' />
             </div>
           </div>

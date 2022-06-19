@@ -7,9 +7,11 @@ const BlogRoute = require('./Routes/BlogRoute');
 const fileUpload = require('express-fileupload');
 require("dotenv").config();
 
-mongoose.connect('mongodb://localhost:27017/travelo').then(() => {
+const pass = "pass12345";
+
+mongoose.connect(`mongodb+srv://emad:${pass}@cluster0.sxzwt.mongodb.net/?retryWrites=true&w=majority`).then(() => {
   console.log('DB connection Successfully!');
-});
+})
 
 const app = express();
 
