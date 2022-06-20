@@ -7,7 +7,6 @@ import Blog from './components/Blog';
 import Profile from './components/Profile';
 import { Routes, Route } from 'react-router-dom';
 
-
 function App() {
   return (
     <div className="App container font-main px-2 relative pb-20 min-h-screen">

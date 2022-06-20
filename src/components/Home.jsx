@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 // Images
 import HomeImg from '../images/Home.jpg';
 import Singapore from '../images/Singapore.jpg';

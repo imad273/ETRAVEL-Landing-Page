@@ -26,11 +26,11 @@ function Navbar() {
         </div>
         <div className={`md:block ${MobileNav ? 'flex' : 'hidden'} justify-center items-center flex-col absolute md:static w-full md:w-auto h-screen md:h-auto left-0 top-0 bg-white z-40`}>
           <i className='bx bx-exit cursor-pointer text-xl absolute right-8 top-5 md:hidden' onClick={() => { setMobileNav(false) }}></i>
-          <Link to="/" className={`mx-2 ${ActiveLink === "Home" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Home") }}>Home</Link>
-          <a href="#" className={`mx-2 ${ActiveLink === "About" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("About") }}>About</a>
-          <Link to="/places" className={`mx-2 ${ActiveLink === "Places" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Places") }}>Places</Link>
-          <a href="#" className={`mx-2 ${ActiveLink === "Careers" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Careers") }}>Careers</a>
-          <Link to="/blog" className={`mx-2 ${ActiveLink === "Blog" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Blog") }}>Blog</Link>
+          <Link to="/" className={`mx-2 ${ActiveLink === "Home" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Home"); setMobileNav(false) }}>Home</Link>
+          <a href="#" className={`mx-2 ${ActiveLink === "About" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("About"); setMobileNav(false) }}>About</a>
+          <Link to="/places" className={`mx-2 ${ActiveLink === "Places" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Places"); setMobileNav(false) }}>Places</Link>
+          <a href="#" className={`mx-2 ${ActiveLink === "Careers" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Careers"); setMobileNav(false) }}>Careers</a>
+          <Link to="/blog" className={`mx-2 ${ActiveLink === "Blog" && 'font-semibold'} text-NavText`} onClick={() => { setActiveLink("Blog"); setMobileNav(false) }}>Blog</Link>
         </div>
         <div>
           {LoginBtn ? 
