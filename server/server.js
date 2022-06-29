@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const pass = "pass12345";
 
-mongoose.connect(`mongodb+srv://emad:${pass}@cluster0.sxzwt.mongodb.net/?retryWrites=true&w=majority`).then(() => {
+mongoose.connect(`mongodb+srv://emad:${pass}@cluster0.sxzwt.mongodb.net/travelo?retryWrites=true&w=majority`).then(() => {
   console.log('DB connection Successfully!');
 })
 
