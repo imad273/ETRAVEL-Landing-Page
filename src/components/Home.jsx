@@ -40,7 +40,7 @@ function Home() {
   return (
     <>
       <div className='h-[90vh] pt-3'>
-        <div className='h-full relative md:rounded-xl overflow-hidden'>
+        <div className='h-full relative rounded-lg md:rounded-xl overflow-hidden'>
           <div className='absolute h-full w-full bg-black/30 z-10'></div>
           <div className='absolute h-full w-full flex justify-center flex-col items-center z-20 text-white'>
             <h1 className='text-4xl md:text-5xl text-center font-bold py-2'>Travel To explore</h1>
@@ -77,7 +77,7 @@ function Home() {
         <div className='flex flex-wrap'>
           <div className='md:flex-1 px-3 py-1 mx-2 my-2 md:my-0 shadow-mine rounded-2xl w-full'>
             <div>
-              <div>
+              <div className='flex flex-col items-center'>
                 <img src={BestPrices} alt='BestPrices' className='px-4 py-2 bg-primaryBg1 my-2 rounded-xl' />
                 <h3 className='text-xl my-3'>Get Best Prices</h3>
               </div>
@@ -90,7 +90,7 @@ function Home() {
           </div>
           <div className='md:flex-1 px-3 py-1 mx-2 my-2 md:my-0 shadow-mine rounded-2xl w-full'>
             <div>
-              <div>
+              <div className='flex flex-col items-center'>
                 <img src={CovidSafe} alt='CovidSafe' className='px-4 py-2 bg-primaryBg1 my-2 rounded-xl' />
                 <h3 className='text-xl my-3'>Covid Safe</h3>
               </div>
@@ -104,7 +104,7 @@ function Home() {
           </div>
           <div className='md:flex-1 px-3 py-1 mx-2 my-2 md:my-0 shadow-mine rounded-2xl w-full'>
             <div className=''>
-              <div>
+              <div className='flex flex-col items-center'>
                 <img src={Fpayment} alt='Fpayment' className='px-4 py-5 bg-primaryBg1 my-2 rounded-xl' />
                 <h3 className='text-xl my-3'>Flexible Payment</h3>
               </div>
@@ -117,7 +117,7 @@ function Home() {
           </div>
           <div className='md:flex-1 px-3 py-1 mx-2 my-2 md:my-0 shadow-mine rounded-2xl w-full'>
             <div>
-              <div>
+              <div className='flex flex-col items-center'>
                 <img src={Nearby} alt='Nearby' className='px-4 py-2 bg-primaryBg1 my-2 rounded-xl' />
                 <h3 className='text-xl my-2'>Find The Best Near You</h3>
               </div>
@@ -135,7 +135,7 @@ function Home() {
         <div className='flex flex-wrap'>
           <div className='md:w-4/12 w-full'>
             <div className="m-2 text-mainText">
-              <img src={Singapore} alt='Singapore' className='rounded-xl shadow' />
+              <img src={Singapore} alt='Singapore' className='rounded-xl w-full' />
               <h3 className='py-2 text-lg font-semibold'>Singapore</h3>
               <p className='text-sm truncate text-secondText'>Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast</p>
               <div className='float-right pt-3'>
@@ -146,7 +146,7 @@ function Home() {
           </div>
           <div className='md:w-4/12 w-full'>
             <div className="m-2 text-mainText">
-              <img src={Thailand} alt='Thailand' className='rounded-xl shadow' />
+              <img src={Thailand} alt='Thailand' className='rounded-xl w-full' />
               <h3 className='py-2 text-lg font-semibold'>Thailand</h3>
               <p className='text-sm truncate text-secondText'>Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces</p>
               <div className='float-right pt-3'>
@@ -157,7 +157,7 @@ function Home() {
           </div>
           <div className='md:w-4/12 w-full'>
             <div className="m-2 text-mainText">
-              <img src={Paris} alt='Paris' className='rounded-xl' />
+              <img src={Paris} alt='Paris' className='rounded-xl w-full' />
               <h3 className='py-2 text-lg font-semibold'>Paris</h3>
               <p className='text-sm truncate text-secondText'>Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.</p>
               <div className='float-right pt-3'>
@@ -168,7 +168,7 @@ function Home() {
           </div>
           <div className='md:w-4/12 w-full'>
             <div className="m-2 text-mainText">
-              <img src={NewZealand} alt='NewZealand' className='rounded-xl' />
+              <img src={NewZealand} alt='NewZealand' className='rounded-xl w-full' />
               <h3 className='py-2 text-lg font-semibold'>New Zealand</h3>
               <p className='text-sm truncate text-secondText'>New Zealand is an island country in the southwestern Pacific Ocean. It consists of two main landmasses</p>
               <div className='float-right pt-3'>
@@ -179,7 +179,7 @@ function Home() {
           </div>
           <div className='md:w-4/12 w-full'>
             <div className="m-2 text-mainText">
-              <img src={Bora} alt='Bora' className='rounded-xl' />
+              <img src={Bora} alt='Bora' className='rounded-xl w-full' />
               <h3 className='py-2 text-lg font-semibold'>Bora</h3>
               <p className='text-sm truncate text-secondText'>Bora Bora is a small South Pacific island northwest of Tahiti in French Polynesia. Surrounded by sand</p>
               <div className='float-right pt-3'>
@@ -190,7 +190,7 @@ function Home() {
           </div>
           <div className='md:w-4/12 w-full'>
             <div className="m-2 text-mainText">
-              <img src={Singapore} alt='london' className='rounded-xl' />
+              <img src={Singapore} alt='london' className='rounded-xl w-full' />
               <h3 className='py-2 text-lg font-semibold'>London</h3>
               <p className='text-sm truncate text-secondText'>London, the capital of England and the United Kingdom, is a 21st-century city with history stretching</p>
               <div className='float-right pt-3'>
