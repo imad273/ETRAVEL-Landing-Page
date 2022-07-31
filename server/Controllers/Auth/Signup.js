@@ -12,10 +12,10 @@ const Signup = async (request, response) => {
   var findUser = await User.find({ Email: request.body.Email });
 
   if (findUser.length > 0) {
-    response.send(JSON.stringify({
+    response.send({
       status: 'Internal Error',
       Message: "This email is already exist"
-    }))
+    })
   } else {
     var password = await cryptPass(request.body.Password);
     try {
@@ -31,16 +31,16 @@ const Signup = async (request, response) => {
         GoogleAccountID: ""
       })
 
-      response.send(JSON.stringify({
+      response.send({
         status: 'success',
         userID: newUser._id.toString()
-      }));
+      });
 
     } catch (error) {
-      response.send(JSON.stringify({
+      response.send({
         status: 'External Error',
         Message: error
-      }));
+      });
       console.log(error);
     }
   }
