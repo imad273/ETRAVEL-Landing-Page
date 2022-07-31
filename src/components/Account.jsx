@@ -52,7 +52,6 @@ function Account({ status, isOpen }) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          SignType: 'normal',
           Name: Name,
           Email: Email,
           Password: Password
@@ -61,7 +60,7 @@ function Account({ status, isOpen }) {
 
       var response = await request.json();
 
-      if (response.status === 'Internal Error') {
+      if (response.status === 'Fail') {
         setShowErrMsg(true);
         setErrorMsg(response.Message);
       } else if (response.status === 'success') {

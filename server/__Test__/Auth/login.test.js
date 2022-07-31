@@ -1,11 +1,10 @@
 const request = require("supertest");
-const app = require("../server");
+const app = require("../../server");
 
 jest.setTimeout(60000);
 
 const sendRequest = async (body) => {
   const response = await request(app).post("/Login").send(body);
-  console.log(response.statusCode);
   return response;
 }
 

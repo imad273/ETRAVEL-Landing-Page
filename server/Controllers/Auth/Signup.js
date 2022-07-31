@@ -38,7 +38,7 @@ const Signup = async (request, response) => {
 
     } catch (error) {
       response.send({
-        status: 'External Error',
+        status: 'Fail',
         Message: error
       });
       console.log(error);
