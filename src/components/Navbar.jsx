@@ -2,12 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Logo from '../images/Logo.png';
 import { Link } from "react-router-dom";
-import Login from "../components/Login";
+import Account from "../components/Account";
 
 function Navbar() {
   const [MobileNav, setMobileNav] = useState(false);
   const [ActiveLink, setActiveLink] = useState("Home");
-  const [IsLoginOpen, setIsLoginOpen] = useState(false);
+  const [AccountPage, setIsAccountPageOpen] = useState(false);
   const [LoginBtn, setLoginBtn] = useState(true);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function Navbar() {
         </div>
         <div>
           {LoginBtn ? 
-            <button className='bg-primary text-sm md:text-base text-white px-3 py-1 rounded-full' onClick={() => { setIsLoginOpen(true) }}>Connect</button>
+            <button className='bg-primary text-sm md:text-base text-white px-3 py-1 rounded-full' onClick={() => { setIsAccountPageOpen(true) }}>Connect</button>
             : 
             <Link to="/profile" className='bg-primary text-sm md:text-base text-white px-3 py-1 rounded-full' onClick={() => { setActiveLink("") }}>Profile</Link>
           }
@@ -43,7 +43,7 @@ function Navbar() {
           <i className='bx bx-menu-alt-right text-xl cursor-pointer'></i>
         </div>
       </nav>
-      <Login status={IsLoginOpen} isOpen={setIsLoginOpen}/>
+      <Account status={AccountPage} isOpen={setIsAccountPageOpen}/>
     </>
   )
 }

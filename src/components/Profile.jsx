@@ -17,7 +17,9 @@ function Profile() {
     setData(response);
   }
 
-  useEffect(fetchData, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const Profile = () => {
     return (
@@ -274,7 +276,7 @@ function Profile() {
   else if (EditPassword) { return (<EditPass />) }
 
   else { return (<Profile />) }
-  
+
 }
 
 export default Profile
