@@ -1,5 +1,6 @@
 const request = require("supertest");
 const app = require("../../server");
+const mongoose = require("mongoose");
 
 jest.setTimeout(60000);
 
@@ -7,6 +8,21 @@ const sendRequest = async (body) => {
   const response = await request(app).post("/SingUp").send(body);
   return response;
 }
+
+const UserModel = require('../../Model/Users');
+
+// Connect to the testing database
+beforeAll(async () => {
+  // Connect to a Mongo DB
+  const url = 'mongodb://localhost:27017/supertest'
+  await mongoose.connect(url, { useNewUrlParser: true })
+})
+
+// Delete te data that created when testing and Close the connection to avoid problem
+afterAll(async () => {
+  await UserModel.deleteOne({ Email: "kelo33666@gamil.com" })
+  await mongoose.connection.close();
+})
 
 describe("Testing user input", () => {
 
@@ -46,15 +62,6 @@ describe("Testing user input", () => {
     expect(res.statusCode).toBe(200);
 
     expect(res.body.status).toBe("success");
-
-  })
-
-  it("should delete the test account that create in singup test", async () => {
-    const response = await request(app).post("/deleteTestAccount").send({ Email: "kelo33666@gamil.com" });
-
-    expect(response.statusCode).toBe(200);
-
-    expect(response.body.status).toBe("success");
 
   })
 }) 

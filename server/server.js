@@ -9,9 +9,12 @@ require("dotenv").config();
 
 const pass = "pass12345";
 
-mongoose.connect(`mongodb+srv://emad:${pass}@cluster0.sxzwt.mongodb.net/travelo?retryWrites=true&w=majority`).then(() => {
-  console.log('DB connection Successfully!');
-})
+// connect to the correct database only when is not in test mode
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(`mongodb+srv://emad:${pass}@cluster0.sxzwt.mongodb.net/travelo?retryWrites=true&w=majority`).then(() => {
+    console.log('DB connection Successfully!');
+  })
+}
 
 const app = express();
 
