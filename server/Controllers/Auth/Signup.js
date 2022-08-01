@@ -13,7 +13,7 @@ const Signup = async (request, response) => {
 
   if (findUser.length > 0) {
     response.send({
-      status: 'Internal Error',
+      status: 'Fail',
       Message: "This email is already exist"
     })
   } else {
@@ -21,7 +21,7 @@ const Signup = async (request, response) => {
     try {
       // create new account
       var newUser = await User.create({
-        SignType: request.body.SignType,
+        SignType: "normal",
         Name: request.body.Name,
         Picture: "avatar.png",
         Email: request.body.Email,

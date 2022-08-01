@@ -46,7 +46,6 @@ describe("Testing user input", () => {
     })
 
     expect(res.statusCode).toBe(200);
-
     expect(res.body.status).toBe("Success");
     // Also this id must be correct
     expect(res.body.userID).toBe("62e548981c2311e91fbc5d93");

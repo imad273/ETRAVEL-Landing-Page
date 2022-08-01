@@ -23,7 +23,6 @@ function Account({ status, isOpen }) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        SignType: 'google',
         Name: AccountName,
         Email: AccountEmail,
         GoogleID: AccountID,

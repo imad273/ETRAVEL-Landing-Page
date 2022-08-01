@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const Login = async (request, response) => {
   // Check if the email acoount exist in our database
   var userInfo = await User.find({ Email: request.body.Email });
-  console.log(userInfo);
   if (userInfo.length > 0) {
     if (userInfo[0].SignType === "google") {
       response.send({

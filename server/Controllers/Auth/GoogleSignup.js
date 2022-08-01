@@ -15,7 +15,7 @@ const GoogleSignup = async (request, response) => {
     } else {
       // create new account if the user didn't create one before
       var newUser = await User.create({
-        SignType: request.body.SignType,
+        SignType: "google",
         Name: request.body.Name,
         Picture: "avatar.png",
         Email: request.body.Email,

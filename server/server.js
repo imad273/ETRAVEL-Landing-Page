@@ -6,7 +6,6 @@ const ProfileRoute = require('./Routes/ProfileRoute');
 const BlogRoute = require('./Routes/BlogRoute');
 const fileUpload = require('express-fileupload');
 require("dotenv").config();
-var bodyParser = require('body-parser');
 
 const pass = "pass12345";
 
@@ -30,8 +29,11 @@ app.post('/hel', (req, res) => {
 })
 
 const PORT = 3001;
-app.listen(process.env.PORT || PORT, function () {
-  console.log(`🌍 it's alive on http://localhost:${PORT}`);
-});
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(process.env.PORT || PORT, function () {
+    console.log(`🌍 it's alive on http://localhost:${PORT}`);
+  });
+}
 
 module.exports = app
