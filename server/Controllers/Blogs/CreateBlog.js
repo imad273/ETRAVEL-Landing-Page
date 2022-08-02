@@ -8,40 +8,52 @@ cloudinary.config({
   api_secret: 'GJJvJI-v85IWBBlDVnwUo7hPS_4'
 });
 
-const Createblog = (request, response) => {
+const Createblog = async (request, response) => {
 
   const Photo = request.files.image;
 
-  cloudinary.v2.uploader.upload(Photo.tempFilePath,
-    function (error, result) {
-      Blog.create({
-        User: request.query.userId,
-        Title: request.body.Title,
-        Picture: result.url,
-        Description: request.body.Description
-      }, async (err) => {
-        if (err) {
-          console.log(err)
-          response.send({
-            status: "failed"
-          })
-        } else {
-          const user = await User.find({ _id: request.query.userId })
-          var increment = user[0].Blogs + 1;
-          User.updateOne({ _id: request.query.userId }, { Blogs: increment },
-            function (err) {
-              if (err) {
-                console.log(err)
-              } else {
-                response.send({
-                  status: "success"
-                })
+  const user = await User.findById(request.query.userId);
+
+  if (user !== null) {
+
+    cloudinary.v2.uploader.upload(Photo.tempFilePath,
+      function (error, result) {
+        Blog.create({
+          User: request.query.userId,
+          Title: request.body.Title,
+          Picture: result.url,
+          Description: request.body.Description
+        }, async (err) => {
+          if (err) {
+            console.log(err)
+            response.send({
+              status: "fail"
+            })
+          } else {
+
+            var increment = user.Blogs + 1;
+            User.updateOne({ _id: request.query.userId }, { Blogs: increment },
+              function (err) {
+                if (err) {
+                  console.log(err)
+                } else {
+                  response.send({
+                    status: "success"
+                  })
+                }
               }
-            }
-          )
-        }
-      })
-    });
+            )
+          }
+        })
+      }
+    )
+  } else {
+    response.send({
+      status: "fail",
+      msg: "user doesn't exist"
+    })
+  }
+
 }
 
 module.exports = Createblog
